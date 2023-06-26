@@ -1,0 +1,24 @@
+<div class="registration-form">
+<h2>Registro de usuario</h2>
+
+<div>
+  <label>Nombre:</label>
+  <input [(ngModel)]="nombre" type="text" placeholder="Ingresa tu nombre">
+</div>
+
+<div>
+  <label>Correo electrónico:</label>
+  <input [(ngModel)]="correo" type="email" placeholder="Ingresa tu correo electrónico">
+</div>
+
+<div>
+  <label>Contraseña:</label>
+  <input [(ngModel)]="contrasena" type="password" placeholder="Ingresa tu contraseña">
+</div>
+
+<button (click)="registrar()">Registrarse</button>
+
+<p *ngIf="error" style="color: red;">{{ error }}</p>
+
+<a routerLink="/login">Iniciar sesión</a>
+</div>

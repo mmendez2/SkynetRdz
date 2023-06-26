@@ -1,0 +1,74 @@
+###
+POST http://localhost:9000/api/users HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Mario",
+  "lastName": "Menendez",
+  "telephone": 37624723,
+  "email": "roberto.sigsa@email.com",
+  "rol":"supervisor"
+
+}
+
+###
+GET http://localhost:9000/api/users HTTP/1.1
+
+###
+GET http://localhost:9000/api/users/6466dd1e611dec26bd6b2e9d HTTP/1.1
+
+###
+DELETE http://localhost:9000/api/users/6466dd1e611dec26bd6b2e9d HTTP/1.1
+
+###
+PUT http://localhost:9000/api/users/6466dd1e611dec26bd6b2e9d HTTP/1.1
+Content-Type: application/json
+
+//{
+//  "nombre": "Mario",
+ // "apellido": "Menendez",
+  //"telefono": 456545658,
+  //"email": "mario@email.com",
+  //"Rol": "Supervisor
+//}
+
+###
+POST http://localhost:9000/api/client HTTP/1.1
+Content-Type: application/json
+
+
+
+{
+  "nombre": "carlos",
+  "direccion": "ciudaddeGuatemala",
+  "telefono": "34234252",
+  "email": "prueba@mail.com",
+  "contacto": "juanperez"
+}
+
+###
+GET http://localhost:9000/api/client HTTP/1.1
+
+###
+
+POST http://localhost:9000/api/visitacli HTTP/1.1
+Content-Type: application/json
+
+
+
+{
+  "fecha": "1dejunio",
+  "tecnico": "juanpoc",
+  "personaresponsable": "ricardo",
+  "departamento": "IT",
+  "motivodevisita": "instalacionderedes",
+  "nocontrato": "sincontrato",
+  "costo": "Q250porhora ",
+  "resultadovisita": "puntosderedinstalados",
+  "observacionescliente": "todofuncionacorrectamente",
+  "horallegada": "test",
+  "horasalida": "test"
+}
+
+###
+GET http://localhost:9000/api/visitacli HTTP/1.1

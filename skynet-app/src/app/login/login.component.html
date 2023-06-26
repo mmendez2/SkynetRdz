@@ -1,0 +1,22 @@
+<div class="login-container">
+<div class="container">
+
+<h2>Iniciar sesión</h2>
+
+<div>
+  <label>Usuario:</label>
+  <input [(ngModel)]="usuario" type="text" placeholder="Ingresa tu usuario">
+</div>
+
+<div>
+  <label>Contraseña:</label>
+  <input [(ngModel)]="contrasena" type="password" placeholder="Ingresa tu contraseña">
+</div>
+
+<button (click)="iniciarSesion()">Iniciar sesión</button>
+
+<p *ngIf="error" style="color: red;">{{ error }}</p>
+
+<a routerLink="/register">Crear una cuenta</a>
+</div>
+</div>
