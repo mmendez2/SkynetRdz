@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AutenticacionService } from '../autenticacion.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,17 +12,17 @@ export class LoginComponent {
   contrasena: string = "";
   error: string= "";
 
-  constructor(private autenticacionService: AutenticacionService) { }
+  constructor(private autenticacionService: AutenticacionService,private router: Router) { }
 
-  iniciarSesion() {
-    /*this.autenticacionService.iniciarSesion(this.usuario, this.contrasena)
+  login() {
+    this.autenticacionService.login(this.usuario)
       .subscribe(
         () => {
-          // Inicio de sesión exitoso, redireccionar a la lista
+          this.router.navigate(['home']);
         },
         error => {
           this.error = error.message;
         }
-      );*/
+      );
   }
 }

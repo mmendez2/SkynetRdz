@@ -29,6 +29,15 @@ router.get("/users/:id", (req, res) => {
     .catch((error) => res.json({ message: error }));
 });
 
+// get a user
+router.get("/users/byEmail/:email", (req, res) => {
+  const { email } = req.params;
+  userSchema
+    .find({email:email})
+    .then((data) => res.json(data))
+    .catch((error) => res.json({ message: error }));
+});
+
 // delete a user
 router.delete("/users/:id", (req, res) => {
   const { id } = req.params;
