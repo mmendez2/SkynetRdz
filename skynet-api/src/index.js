@@ -9,12 +9,16 @@ const visitacliRoute = require("./routes/visitacli");
 // settings
 const app = express();
 const port = process.env.PORT || 9000;
+const cors = require('cors');
+app.use(cors());
 
 // middlewares
 app.use(express.json());
 app.use("/api", userRoute);
 app.use("/api", clientRoute);
 app.use("/api", visitacliRoute);
+
+
 
 // routes
 app.get("/", (req, res) => {

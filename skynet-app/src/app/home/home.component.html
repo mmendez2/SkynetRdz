@@ -1,1 +1,37 @@
-<p>home works!</p>
+<!-- dashboard.component.html -->
+
+<div class="container">
+    <h2>Registro de Visitas</h2>
+  
+    <form (submit)="registerVisit()">
+      <div class="form-group">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" [(ngModel)]="visit.name" class="form-control" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" [(ngModel)]="visit.email" class="form-control" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="purpose">Motivo de la visita:</label>
+        <textarea id="purpose" name="purpose" [(ngModel)]="visit.purpose" class="form-control" rows="3" required></textarea>
+      </div>
+  
+      <button type="submit" class="btn btn-primary">Registrar Visita</button>
+    </form>
+  
+    <h2>Historial de Visitas</h2>
+  
+    <ul class="visit-list">
+      <li *ngFor="let pastVisit of pastVisits" class="visit-item">
+        <div class="visit-info">
+          <p><strong>Nombre:</strong> {{ pastVisit.name }}</p>
+          <p><strong>Correo electrónico:</strong> {{ pastVisit.email }}</p>
+          <p><strong>Motivo de la visita:</strong> {{ pastVisit.purpose }}</p>
+        </div>
+        <button class="btn btn-danger" (click)="deleteVisit(pastVisit)">Eliminar</button>
+      </li>
+    </ul>
+  </div>
